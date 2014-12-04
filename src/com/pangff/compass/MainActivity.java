@@ -13,8 +13,8 @@ public class MainActivity extends Activity  {
 		setContentView(R.layout.activity_main);
 		compassView = new CompassView(this, findViewById(R.id.rootView));
 		
-		
-		compassView.setPointer(39.9086400566,116.3964321279,-26.9086400566,-116.3964321279);
+		//21.422460825623126
+		compassView.setPointer(39.79,116.3964321279,39.79,-116.3964321279);
 		
 		//compassView.setPointer(114.9086400566,116.3964321279,18.56,72.49);
 	}
