@@ -66,8 +66,8 @@ public class CompassView implements SensorEventListener {
 
 		// Log.e("-azimuth+dxDegree","-azimuth+dxDegree======"+(-azimuth+dxDegree));
 		RotateAnimation rb = new RotateAnimation(
-				(float) (-currectAzimuth - dxDegree),
-				(float) (-azimuth - dxDegree), Animation.RELATIVE_TO_SELF,
+				(float) (-currectAzimuth + dxDegree),
+				(float) (-azimuth + dxDegree), Animation.RELATIVE_TO_SELF,
 				0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 		// 设置动画的持续时间
 		rb.setDuration(500);
@@ -133,9 +133,10 @@ public class CompassView implements SensorEventListener {
 //		bLocation.setLongitude(lng_b);
 //		dxDegree = aLocation.bearingTo(bLocation)+180;
 		
-		JwdHelper jwda = new JwdHelper(lng_a, lat_a);
-		JwdHelper jwdb = new JwdHelper(lng_b, lat_b);
-		dxDegree = JwdHelper.angle(jwda, jwdb);
+		JwdHelper jwda = new JwdHelper(lng_b, lat_b);
+		JwdHelper jwdb = new JwdHelper(lng_a, lat_a);
+		dxDegree = JwdHelper.angle(jwda, jwdb)-180;
+		Log.e("dxDegree","dxDegree:"+dxDegree);
 	}
 
 

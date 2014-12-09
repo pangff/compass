@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
 		compassView = new CompassView(this, findViewById(R.id.rootView));
 
 		// 21.422460825623126
-		compassView.setPointer(39.79, 116.3964321279, 39.79, -116.3964321279);
+		compassView.setPointer(39.79, 116.3964321279, 21.422460825623126,39.82620057548526 );
 
 		// compassView.setPointer(114.9086400566,116.3964321279,18.56,72.49);
 		Log.e("ddd", "getDensity=====getDensity:"+getDensity());
