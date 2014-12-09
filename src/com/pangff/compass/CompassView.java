@@ -124,14 +124,18 @@ public class CompassView implements SensorEventListener {
 	 */
 	public void setPointer(double lat_a, double lng_a, double lat_b,
 			double lng_b) {
-		Location aLocation = new Location("");// provider name is unecessary
-		aLocation.setLatitude(lat_a);// your coords of course
-		aLocation.setLongitude(lng_a);
-
-		Location bLocation = new Location("");// provider name is unecessary
-		bLocation.setLatitude(lat_b);// your coords of course
-		bLocation.setLongitude(lng_b);
-		dxDegree = aLocation.bearingTo(bLocation)+180;
+//		Location aLocation = new Location("");// provider name is unecessary
+//		aLocation.setLatitude(lat_a);// your coords of course
+//		aLocation.setLongitude(lng_a);
+//
+//		Location bLocation = new Location("");// provider name is unecessary
+//		bLocation.setLatitude(lat_b);// your coords of course
+//		bLocation.setLongitude(lng_b);
+//		dxDegree = aLocation.bearingTo(bLocation)+180;
+		
+		JwdHelper jwda = new JwdHelper(lng_a, lat_a);
+		JwdHelper jwdb = new JwdHelper(lng_b, lat_b);
+		dxDegree = JwdHelper.angle(jwda, jwdb);
 	}
 
 
